@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Function to simplify hierarchy names
     const simplifyHierarchyName = (name) => {
         if (name.startsWith('CCIT')) return 'CCIT';
-        if (name.startsWith('ADDCIT')) return 'ADDCIT';
-        if (name.startsWith('CIT')) return 'CIT';
-        if (name.startsWith('ITO') || name.startsWith('DCIT')) return 'ITO/DCIT';
+        if (name.startsWith('ADDCIT')) return 'Range Head';
+        if (name.startsWith('CIT')) return 'CIT Charge';
+        if (name.startsWith('ITO') || name.startsWith('DCIT')) return 'AO';
         return name; // Default case if no match is found
     };
 
@@ -37,9 +37,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Create table headers dynamically based on role
     detailsTableHead.innerHTML = `
         <th>PAN</th>
-        <th>TypeOfApplication</th>
-        <th>DateOfApplication</th>
-        <th>DateOfDisposal</th>
+        <th>Application Type</th>
+        <th>Application Date</th>
+        <th>Disposal Date</th>
         <th>PENDENCY SINCE(DAYS)</th>
     `;
     columns.forEach(col => {
