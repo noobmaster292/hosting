@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Function to simplify hierarchy names
     const simplifyHierarchyName = (name) => {
         if (name.startsWith('CCIT')) return 'CCIT';
-        if (name.startsWith('ADDCIT')) return 'Range Head';
-        if (name.startsWith('CIT')) return 'CIT Charge';
-        if (name.startsWith('ITO') || name.startsWith('DCIT')) return 'AO';
+        if (name.startsWith('ADDCIT')) return 'ADDCIT';
+        if (name.startsWith('CIT')) return 'CIT';
+        if (name.startsWith('ITO') || name.startsWith('DCIT')) return 'ITO/DCIT';
         return name; // Default case if no match is found
     };
 
