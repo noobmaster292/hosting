@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         <th>Application Type</th>
         <th>Application Date</th>
         <th>Disposal Date</th>
-        <th>PENDENCY SINCE(DAYS)</th>
+        <th>DISPOSAL TIME(DAYS)</th>
     `;
     columns.forEach(col => {
         const th = document.createElement('th');
