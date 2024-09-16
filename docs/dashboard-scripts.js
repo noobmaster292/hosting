@@ -51,9 +51,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Create table headers dynamically based on role
         detailsTableHead.innerHTML = `
             <th>PAN</th>
-            <th>TypeOfApplication</th>
-            <th>DateOfApplication</th>
-            <th>PENDENCY SINCE(DAYS)</th>
+            <th>APPLICATION TYPE</th>
+            <th>APPLICATION DATE</th>
+            <th>PENDENCY (DAYS)</th>
         `;
         columns.forEach(col => {
             const th = document.createElement('th');
