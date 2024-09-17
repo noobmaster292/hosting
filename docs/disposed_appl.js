@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         <th>Application Date</th>
         <th>Disposal Date</th>
         <th>DISPOSAL TIME (DAYS)</th>
-        <th>Date Of Query</th> <!-- Added DateOfQuery header -->
+        <th>Query Date</th> <!-- Added DateOfQuery header -->
     `;
     columns.forEach(col => {
         const th = document.createElement('th');
