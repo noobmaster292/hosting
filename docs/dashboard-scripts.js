@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Determine the columns based on the role
         const columns = roleColumns[role] || [];
+        const showDateOfQuery = ['CCIT', 'CIT', 'ADDCIT'].includes(role);
 
         // Create table headers dynamically based on role
         detailsTableHead.innerHTML = `
@@ -54,6 +55,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             <th>APPLICATION TYPE</th>
             <th>APPLICATION DATE</th>
             <th>PENDENCY (DAYS)</th>
+            ${showDateOfQuery ? '<th>DateOfQuery</th>' : ''}
         `;
         columns.forEach(col => {
             const th = document.createElement('th');
@@ -71,19 +73,22 @@ document.addEventListener('DOMContentLoaded', async () => {
         detailsTableBody.innerHTML = '';
 
         // Populate the table with data records
-        // Populate the table with data records
         data.forEach(record => {
             console.log('Processing record:', record); // Log the entire record
 
             const tr = document.createElement('tr');
             const additionalUsers = Array.from(record.additional_users); // Convert Set to Array
 
-            // Add data cells for PAN, TypeOfApplication, DateOfApplication
+            // Handle DateOfQuery and show "no queries" if empty
+            const dateOfQuery = record.DateOfQuery ? record.DateOfQuery : 'no queries';
+
+            // Add data cells for PAN, TypeOfApplication, DateOfApplication, and DateOfQuery
             tr.innerHTML = `
                 <td>${record.PAN}</td>
                 <td>${record.TypeOfApplication}</td>
                 <td>${record.DateOfApplication}</td>
                 <td>${calculateDaysSince(record.DateOfApplication)}</td>
+                ${showDateOfQuery ? `<td>${dateOfQuery}</td>` : ''}
             `;
 
             // Add cells for each fixed hierarchy level based on the additional users array
