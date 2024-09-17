@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             <th>APPLICATION TYPE</th>
             <th>APPLICATION DATE</th>
             <th>PENDENCY (DAYS)</th>
-            ${showDateOfQuery ? '<th>DateOfQuery</th>' : ''}
+            ${showDateOfQuery ? '<th>Query Date</th>' : ''}
         `;
         columns.forEach(col => {
             const th = document.createElement('th');
